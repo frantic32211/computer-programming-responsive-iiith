@@ -66,6 +66,8 @@ window.view = {
 			else
 				alert('Enter array size first !')
 		}
+		else if (document.getElementById('userInput').disabled){
+		}
 		else
 			alert( 'Size of the array must be an Integer !' )
 	},
@@ -83,8 +85,10 @@ window.view = {
 	},
 	takeInputFromRadioBox: function() {
 		var element = document.getElementsByName('radio_group')
-		if ( element[0].checked )
+		if ( element[0].checked ){
+			document.getElementById('userInput').disabled = true
 			this.generateRandomNumbers()
+		}		
 		else if (element[1].checked)
 			this.getUserInput()
 	},
